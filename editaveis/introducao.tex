@@ -1,44 +1,33 @@
 \chapter*[Introdução]{Introdução}
 \addcontentsline{toc}{chapter}{Introdução}
 
--> Questões de quailidade/metricas na ENG de SOFT
+O processo de estabelecer que um produto tem qualidade ou não, pode ser guiado a partir do uso de metricas que meçam ou que definam tal qualidade.
+No contexto da Engenharia de Software,segundo \cite{Meirelles} uma maneira objetiva de se observar as características de um código-fonte é analisando
+os valores de suas métricas, sendo que para a análise de código fonte, métricas objetivas são mais apropriadas, uma vez que estas podem ser calculadas a partir de uma análise estática do código fonte de um software \cite{Meirelles}. A definição dessas métricas, normalmente é feita a partir da coleta de dados de um grande número de projetos com perfis
+semelhantes(projetos em java usarão valores de métricas para java). 
 
-Segundo \cite{Zacchiroli}, pacotes são abstrações defininindo a granularidade em que
-usuários podem atuar(adicionar, remover, atualizar, etc) em um software disponível. Ainda
+Segundo \cite{Zacchiroli}, pacotes são abstrações defininindo a granularidade em que usuários podem atuar(adicionar, remover, atualizar, etc) em um software disponível. Ainda
 segundo \cite{Zacchiroli} uma distribuição é uma coleção de pacotes mantidos de maneira coerente.
 O Debian GNU/Linux, é uma distribuição do sistema operacional Linux, e os vários pacotes que são executados sobre ele\cite{Debian}.
-
 O Linux é um clone do sistema operacional Unix, escrito do zero por por Linus Torvalds com a ajuda de um time de programadores distribuidos pelo internet \cite{Linux}.
-
-A distribuição Debian, atualmente, pode ser utilizada com outros kernels(Hurd, BSD), mas o foco dessa pesquisa será com o Debian GNU/Linux.
 
 O Debian Gnu/Linux é:
         \begin{itemize}
-        \item \textbf{funcional}: Debian inclui mais de quarenta e dois mil, quinhentos e cinquenta e um pacotes no presente momento. O usuário
+        \item \textbf{funcional}: Debian inclui 49.096 pacotes no presente momento. O usuário
         pode escolher qual pacote instalar;O Debian provê uma ferramenta para esse proposito.\cite{Debian}
 
         \item \textbf{livre para ser usado e redistribuido}: Não há um consórcio ou pagamento exigido para participar na sua distribuição e desenvolvimento.
         Todos os pacotes que são parte do Debian GNU/Linux são de distribuição livre, usualmente sob os termos especificados pela licença GPL.\cite{Debian}
 
-        \item \textbf{dinamico}: Com cerca de mil e trinta e três voluntários contribuindo constantemente com código novo e melhorado, Debian evolui rapidamente.\cite{Debian}
+        \item \textbf{dinamico}: Com cerca de 1033 voluntários contribuindo constantemente com código novo e melhorado, Debian evolui rapidamente.\cite{Debian}
         \end{itemize}
 
-Nesta pesquisa iremos utlizar a distribuição Debian e seus repositórios oficiais, além do software AppRecommender.
 
-O AppRecommender 
+        A estrutura de um pacote Debian é formalmente estabelecida por um documento chamado \textit {Debian Policy Manual}. Abordaremos esse documento de maneira mais profunda ao longo deste trabalho.Além de estabelecer a política que rege a distribuição como um todo,  esse manual também se atem a definir a interface do sistema de gerenciamento de pacotes em que os desenvolvedores tem de estar familizarizados \cite{Guide}. É com \textit {Debian Policy Manual} que iremos definir o que deve existir dentro de um pacote Debian. Além deste manual também estaremos fazendo utilizando como insumo para essa pesquisa o documento cchamado \textit{Guide for Debian Maintainers}. Nesse guia prático, Osamu Aoki demonstra como um pacote Debian é construído, quais ferramentas são utilizadas, e como a política definida pelo \textit{Debian Policy Manual} deve ser implementada.
+        
+Apesar do grande número de métricas já estabelecidas para a medição da qualidade de um software,
+esta pesquisa visa investigar uma área mais abrangente que apenas o código fonte de uma aplicação. Pacotes de distribuições Linux, são formados por código fonte mais uma série de meta dados. Dessa forma definir métricas de qualidade para pacotes de distribuições linux, tem de levar em consideração tanto o código fonte incluido no pacote, quanto a estrutura e organização de seus meta dados. 
 
+Dentro desse contexto de qualidade relacionado a pacotes Debian, iremos aplicar todos esses conceitos a uma área prática e utilizada em diversas aplicações pelo mundo. Essa área é a de recomendação, mas expecificamente recomendação de pacotes Debian. O software AppRecommender reflete o estado da arte de recomendação de pacotes para a distribuição Debian.   Segundo \cite{Cavalcanti}, usuários podem ter dificuldades em encontrar pacotes que lhes agradem ou até mesmo ficarem sabendo de algum novo pacote no sistema. Além disso, sistemas de recomendação também podem ajudar a comunidade, pois com mais usuários do pacote, pode-se entender que o número de bugs registrados tende a aumentar, podendo assim aumentar a qualidade do software sendo usado.
 
-
--> Conceituar aplicações diversas e como elas viram pacotes
-
-Com essa conceituação podemos inferir, que pacotes são a base para qualquer distribuição que utilize
-
-
--> Conceituar kernel
-
--> Conceituar o Debian
-
--> Falar sobre sistemas de recomendação
-
--> Falar sobre integração contínua
-
+Hoje, o AppRecommender, recomenda pacotes a partir de um perfil do usuário, construido pela própria aplicação. Com esse perfil, o AppRecommender é capaz de recomendar novos pacotes, baseando-se nos pacotes que foram instalados manualmente. Esse perfil construído pelo AppRecommender não leva em consideração a qualidade desses pacotes, podendo muitas vezes recomendar pacotes com vários bugs reportados, testes quebrando, ou que não são mais mantidos pela comunidade.Informar ao usuário que determinado pacote que está sendo recomendado, pode vir a ser um pacote de má qualidade é de suma importância para um recomendação confiável.
