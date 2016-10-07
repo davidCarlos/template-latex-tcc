@@ -4,11 +4,22 @@
 % TODO: Exemplificar melhor sistemas de classificação
 De maneira formal, o processo de classificação de um conjunto de dados pode ocorrer de diferentes maneiras. De maneira geral, classificação é uma tarefa básica em mineração de dados que requer a construção de de um classificador, ou seja, uma função que atribui uma categoria aos dados observados, descritos por um conjunto de variáveis \cite{Taheri}. Um sistema de classificação, é composto por duas partes. O modelo de dados, que representa as variáveis do mundo real que estamos tratando, e o próprio classificador, que recebe como entrada este modelo definido previamente, atribuindo assim aos dados processados, categorias do domínio, ou seja, classificando-os.
 
- Uma categoria, depende do contexto a qual esses dados pertencem, e está diretamente relacionada, ao modelo de dados construído. Contextos como disgnósticos de doenças, processamento e reconhecimento de imagens, fazem uso extensivo de algorítimos de classificação. O processo de categorização irá receber o modelo de dados como entrada, modelo esse que irá, de maneira simplificada, representar as variáveis do sistema complexo que estamos lidando. É nesse ambito do processo de classificação que a estatística é utilizada. 
- 
- O fato de estarmos lidando com sistemas complexos, que podem vir a ter diversas variáveis diferentes, e que podem sofrer influência entre si, é que aplicamos os conceitos da computação, ao lançarmos mão de algorítmos que nos permitam aplicar um modelo de dados a uma entrada desconhecida, e termos como saída, uma categorização para esses dados. 
+ Uma categoria, depende do contexto a qual esses dados pertencem, e está diretamente relacionada, ao modelo de dados construído. Contextos como disgnósticos de doenças, processamento e reconhecimento de imagens, fazem uso extensivo de algorítimos de classificação. O processo de categorização irá receber o modelo de dados como entrada, modelo esse que irá, de maneira simplificada, representar as variáveis do sistema complexo que estamos lidando. É nesse ambito do processo de classificação que a estatística é utilizada.
 
- % TODO: Falar um pouco sobre algorítmos supervisionados
+ O fato de estarmos lidando com sistemas complexos, que podem vir a ter diversas variáveis diferentes, e que podem sofrer influência entre si, é que aplicamos os conceitos da computação, ao lançarmos mão de algorítmos que nos permitam aplicar um modelo de dados a uma entrada desconhecida, e termos como saída, uma categorização para esses dados.
+
+Problemas que envolvem aprendizado de máquina são bastante heterogêneos, e diversas estratégias, tanto do ponto de vista de algorítmos, quando de modelos estatísticos foram propostas na literatura. Isso faz com que diferentes domínios utilizem aprendizado de máquina
+em suas aplicações. Alguns exemplos:
+
+\begin{itemize}
+\item Análise de imagens para identificar formas e estruturas distintas, como para análises médicas e reconhecimento de impressões digitais\cite{Louridas}.
+
+\item Uso de big data para criação de regras para análise de dados. Utilizado na área de marketing e promoções de vendas\cite{Louridas}.
+
+\item Reconhecimento de padrões para analizar código fonte em busca de fraquezas, como más práticas e falhas críticas\cite{Louridas}.
+
+\item Criação de eurísticas de segurança para refinar padrões de ataque, protegendo assim portas e redes \cite{Louridas}.
+\end{itemize}
 
  % TODO: Falar um pouco sobre a incerteza de qualidade presente em projetos opensource, para então linkar com os conceitos do Debian
 
@@ -30,12 +41,12 @@ O Debian Gnu/Linux é:
 
 
         A estrutura de um pacote Debian é formalmente estabelecida por um documento chamado \textit {Debian Policy Manual}. Abordaremos esse documento de maneira mais profunda ao longo deste trabalho.Além de estabelecer a política que rege a distribuição como um todo,  esse manual também se atem a definir a interface do sistema de gerenciamento de pacotes em que os desenvolvedores tem de estar familizarizados \cite{Guide}. É com \textit {Debian Policy Manual} que iremos definir o que deve existir dentro de um pacote Debian. Além deste manual também estaremos utilizando como insumo para essa pesquisa o documento cchamado \textit{Guide for Debian Maintainers}. Nesse guia prático, Osamu Aoki demonstra como um pacote Debian é construído, quais ferramentas são utilizadas, e como a política definida pelo \textit{Debian Policy Manual} deve ser implementada.
-        
+
 
         Analisar se um pacote já existente é bom ou não no Debian, é uma tarefa que envolve avaliar aplicações como o BTS, que informa uma série de informações sobre o pacote, dados do lintian, ferramenta de análise estática para pacotes Debian, e também o DebCi, infraestrutura de integração contínua para pacotes Debian. Essa avaliação é feita por qualquer um que queira saber qual a situação de um pacote no Debian. Criar um sistema que possa classificar pacotes Debian de maneira coerente, e que gere uma saída que possa ser usada em outros contextos, é a motivação principal desse trabalho.
 
 \section{Objetivos}
-        
+
         Essa pesquisa tem por objetivo geral desenvolver um sistema de classificação para pacotes Debian, de maneira que dado um pacote
         como entrada, possamos avaliá-lo estatistamente, dando assim um parecer sobre a sua qualidade do ponto de vista da política para pacotes Estabelicida pelo Debian.
         Este objetivo geral está atrelado a algumas questões de pesquisa, que serão respondidas ao longo desta pesquisa:
@@ -53,6 +64,6 @@ O Debian Gnu/Linux é:
                 \end{enumerate}
 
 \section{Organização do Trabalho}
-        
-        Esta pesquisa será estruturada em três capitulos. No capitulo 2 abordaremos a estrutura atual do Pet e analizaremos as apis externas que iremos utilizar para evoluir sua base de dados. 
+
+        Esta pesquisa será estruturada em três capitulos. No capitulo 2 abordaremos a estrutura atual do Pet e analizaremos as apis externas que iremos utilizar para evoluir sua base de dados.
         No capitulo 3 faremos uma revisão bibliográfica sobre o estado da arte de sistemas de classificação, os algorítmos e abordagens(computacionais e estatísticas) utilizadas em sistema dessa categoria. No capitulo 4 abordaremos a metodologia para a implementação do algorítmo de classificação para pacotes Debian. No capitulo 5 discutiremos os resultados alcançados e as demais considerações sobre o trabalho.
