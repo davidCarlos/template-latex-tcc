@@ -1,31 +1,34 @@
-\part{Fundamentação Teórica}
+\chapter{Fundamentação Teórica}
+\addcontentsline{toc}{chapter}{Fundamentação Teórica}
 
-\chapter{Aprendizado de Máquina}
+\section{Aprendizado de Máquina}
 Aprendizado de máquina é uma disciplina focada em duas questões interelacionadas: Como construir sistemas que automaticamente melhoram por meio da experiência? e quais  leis estatisticas,
 computacionais e da teoria da informação que governam todos os sistemas de aprendizagem, incluindo computadores, seres humanos, e organizações?. O estudo de aprendizado de máquina é importante tanto
 para responder a essas questões fundamentais de Engenharia e Ciência, quanto pelas aplicações computacionais que tem produzido \cite{Jordan}.
-Um problema de aprendizado, pode ser colocado como um problema de melhorar uma medida de performance, quando se executa alguma tarefa, através de algum tipo de experiência de treinamento \cite{Jordan}.
+Um problema de aprendizado, pode ser colocado como um problema que reside em melhorar uma medida de performance, quando se executa alguma tarefa, através de algum tipo de experiência de treinamento \cite{Jordan}.
+
+
+
 Para resolver problemas de aprendizado de máquina, diversos algorítmos foram propostos. A tarefa a ser feita(que é o problema que queremos resolver) normalmente é materializada, dentro de um algorítmo de aprendizado qualquer, como uma função.
 Essa função recebe uma entrada , e gera uma saída categorizada. O aprendizado em si, reside em melhorar a precisão entre o par de dados envolvidos no problema, ou seja, o quão preciso o algorítmo utilizado será, em resolver a tarefa em questão.
 
-\section{Algorítmos de aprendizado}
+\subsection{Algorítmos de aprendizado}
 
 O problema de aprendizado pode ser classificado, de maneira geral, de duas maneiras: Aprendizado supervisionado e não supervisionado
 
-\subsection{Aprendizado supervisionados}
+\subsection{Aprendizado supervisionado}
 Para o aprendizado supervionado, o conjunto de dados utilizado no treinamento será formado pelos dados em si, e pela saída esperada para esses dados\cite{Louridas}. É no ambito do aprendizado supervisionado,
 que sistemas de classificação são construidos. Para que um sistema de classificação, classifique dados desconhecidos, é preciso treina-lo com um conjunto de dados em que cada dado, possui sua classificação previamente definida.
 O conceito de melhorar a experiência no aprendizado de máquina, reside justamente no aprendizado supervisionado.
 
-\section{Modelos estatísticos}
+\subsection{Aprendizado não supervisionado}
 
-\chapter{Sistemas de classificação}
+\subsection{Modelo estatístico}
+
+\subsection{Sistemas de classificação}
 Sistemas de classificação são largamente utilizados na indústria e na academia. Estudos em diferentes áreas do conhecimento
 lançam mão de algorítmos de aprendizado de máquina para extrair valor de dados que não necessáriamente são totalmente objetivos. Na realidade,
-técnicas de aprendizado de máquina, são tolerantes a dados que são imprecisos, parcialmente incorretos ou incertos \cite{Malhotra}. Um primeiro
-exemplo que podemos citar, é a utilização de técnicas de aprendizado de máquina para classificar modulos e classes como passíveis, ou não, a falha\cite{Malhotra}.  A construção de um modelo que represente esse tipo de contexto, leva em consideração métricas de código fonte e dados previos de falhas\cite{Malhotra}.
-
-A área de saúde também pode se beneficiar de sistemas de recomendação. Uma pesquisa feita pela Universidade da Macedônia,  com pacientes portadores de Parkinson e pessoas sem a doença, permitiu, a partir da construção de um modelo estatístico e um classificador Bayesiano, diagnosticar com uma precisão de 91\%, parcientes com Parkinson\cite{Kotsavasiloglou}. O modelo estatístico definido pela Universidade levou em consideração métricas extraidas a partir do uso de tablets pelos voluntários. Era solicitado que se desenhasse, em um tablet, 11 linhas horizontais da esquerda para a direita, e outras 10 linhas horizontais da direita para esquerda. A partir dessa atividade os pesquisadores extrairam as métricas utilizadas no modelo, uma vez que os voluntários, foram divididos em três grupos distintos, sendo um deles de pacientes com a doença. Vale ressaltar que o estudo foi motivado principalmente pela subjetividade em diagnosticar uma doença como Parkinson, propondo assim um metodo que agregue a futuros diagnósticos.
+técnicas de aprendizado de máquina, são tolerantes a dados que são imprecisos, parcialmente incorretos ou incertos \cite{Malhotra}. .
 
 Existem hoje, diversos algorítmos para construir um sistema de classificação. Podemos fazer uso de regressão lógica, árvores de classificação, máquinas de suporte vetorial, florestas aleatórias, redes neurais artificiais, entre outros.
 A regressão lógica envolve algorítmos como regressão linear, árvores de decisão, redes de Bayesian, classificação fuzzy, e redes neurais artificiais\cite{Louridas}.
