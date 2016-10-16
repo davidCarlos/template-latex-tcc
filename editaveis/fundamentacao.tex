@@ -2,26 +2,35 @@
 \addcontentsline{toc}{chapter}{Fundamentação Teórica}
 
 \section{Aprendizado de Máquina}
-Aprendizado de máquina é uma disciplina focada em duas questões interelacionadas: Como construir sistemas que automaticamente melhoram por meio da experiência? e quais  leis estatisticas,
+Aprendizado de máquina é uma disciplina focada em duas questões interelacionadas: Como construir sistemas que automaticamente melhoram por meio da experiência? e quais as leis estatisticas,
 computacionais e da teoria da informação que governam todos os sistemas de aprendizagem, incluindo computadores, seres humanos, e organizações?. O estudo de aprendizado de máquina é importante tanto
 para responder a essas questões fundamentais de Engenharia e Ciência, quanto pelas aplicações computacionais que tem produzido \cite{Jordan}.
 Um problema de aprendizado, pode ser colocado como um problema que reside em melhorar uma medida de performance, quando se executa alguma tarefa, através de algum tipo de experiência de treinamento \cite{Jordan}.
 
+Uma tarefa pode ser entendida como o processo de categorizar um dado, que será utilizado como entrada do algorítmo de aprendizado de máquina escolhido. Um bom exemplo dado por \cite{Jordan}, é a classificação de uma
+transação bancária como fraudulenta ou não. A tarefa reside exatamente na categorização. O quão precisa essa categorização é, depende da forma como o algorítmo escolhido para atender tal demanda é treinado. A maneira como
+esses dados são categorizados varia de acordo com o algorítmo selecionado para a classificação. Cada algorítmo espera que esses dados sejam modelados de uma forma ou de outra, assunto que será abordado ao longo deste capítulo.
+
+Quando falamos em medida de performance, nos referimos diretamente a precisão com o que o algorítmo é capaz de resolver um problema de aprendizado. Essa precisão é refinada na fase de treinamento do algorítmo.
+% Continuar falando como o treinamento pode ser realizado.
+
+Qualquer que seja o algorítmo de aprendizado, um objetivo chave, ciêntifico e pratico, é caracterizar teoricamente a capacidade do algorítmo e a dificuldade inerente a qualquer problema de aprendizado: Quão preciso é o aprendizado
+do algorítmo a partir de um tipo e volume específico de dados\cite{Jordan}.
 
 
-Para resolver problemas de aprendizado de máquina, diversos algorítmos foram propostos. A tarefa a ser feita(que é o problema que queremos resolver) normalmente é materializada, dentro de um algorítmo de aprendizado qualquer, como uma função.
-Essa função recebe uma entrada , e gera uma saída categorizada. O aprendizado em si, reside em melhorar a precisão entre o par de dados envolvidos no problema, ou seja, o quão preciso o algorítmo utilizado será, em resolver a tarefa em questão.
-
-\subsection{Algorítmos de aprendizado}
-
-O problema de aprendizado pode ser classificado, de maneira geral, de duas maneiras: Aprendizado supervisionado e não supervisionado
+A disciplina de aprendizado de máquina pode ser subdividida da seguinte forma:
+\begin{figure}[h]
+	\centering
+	\label{fig01}
+        \includegraphics[scale=0.33]{figuras/mind1.eps}
+	\caption{Abordagens para aprendizado de máquina}
+\end{figure}
+Neste capitulo iremos direcionar nossos estudos para o aprendizado supervisionado, pois eles são a base para sistemas de classificação.
 
 \subsection{Aprendizado supervisionado}
-Para o aprendizado supervionado, o conjunto de dados utilizado no treinamento será formado pelos dados em si, e pela saída esperada para esses dados\cite{Louridas}. É no ambito do aprendizado supervisionado,
+Para o aprendizado supervionado, o conjunto de dados utilizado no treinamento será formado pelos dados em si, e pela saída esperada para esses dados\cite{Louridas}. Segundo \cite{James}, aprendizado estatístico supervisionado involve construir um modelo estatístico para prever ou estimar, uma saída a partir de uma ou mais entradas.  É no ambito do aprendizado supervisionado,
 que sistemas de classificação são construidos. Para que um sistema de classificação, classifique dados desconhecidos, é preciso treina-lo com um conjunto de dados em que cada dado, possui sua classificação previamente definida.
 O conceito de melhorar a experiência no aprendizado de máquina, reside justamente no aprendizado supervisionado.
-
-\subsection{Aprendizado não supervisionado}
 
 \subsection{Modelo estatístico}
 
@@ -30,8 +39,6 @@ Sistemas de classificação são largamente utilizados na indústria e na academ
 lançam mão de algorítmos de aprendizado de máquina para extrair valor de dados que não necessáriamente são totalmente objetivos. Na realidade,
 técnicas de aprendizado de máquina, são tolerantes a dados que são imprecisos, parcialmente incorretos ou incertos \cite{Malhotra}. .
 
-Existem hoje, diversos algorítmos para construir um sistema de classificação. Podemos fazer uso de regressão lógica, árvores de classificação, máquinas de suporte vetorial, florestas aleatórias, redes neurais artificiais, entre outros.
-A regressão lógica envolve algorítmos como regressão linear, árvores de decisão, redes de Bayesian, classificação fuzzy, e redes neurais artificiais\cite{Louridas}.
 
 % TODO: Trazer mais um exemplo de sistemas de classificação
 

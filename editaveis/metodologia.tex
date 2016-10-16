@@ -40,19 +40,20 @@ Hoje, no debian, existe uma aplicação chamada \textit{Pet}, que é responsáve
 
 \begin{figure}[h]
 	\centering
-	\label{fig01}
+	\label{fig02}
         \includegraphics[scale=0.25]{figuras/pet1.eps}
 	\caption{Visão geral do Pet utilizado pelo time de ruby}
 \end{figure}
 
 O \textit{Pet} é uma aplicação escrita em python, e que hoje é mantida pela Universidade de Brasília. O Pet faz uso de uma técnica chamada de ORM(\textit{Object Relational Mapping}). 
 Nesse tipo de técnica, orientada a objetos, uma classe da camada modelo é mapeada diretamente por uma tabela em um banco de dados relacional, criando um nível de abstração entre o banco de dados, e a modelagem de negócio da aplicação.
-Isso permite que a aplicação faça buscas complexas no banco de dados a partir de uma DSL(\textit{Domain Specific Language}), sem a necessidade da escrita direta de código sql dentro da aplicação.
+Isso permite que a aplicação faça buscas complexas no banco de dados, sem a necessidade da escrita direta de código sql dentro da aplicação. No caso do Pet é utilizado uma ferramenta chamada \textit{sqlalchemy}, que provê uma suite completa
+de padrões conhecidos de perssistência, projetado para ser eficiente e para realizar acessos de alta performance ao banco de dados, adaptado a uma linguagem de domínio escrita em python\cite{sqlalchemy}
 
 Hoje, o banco de dados do Pet está organizado da seguinte forma:
 \begin{figure}[h]
 	\centering
-	\label{fig01}
+	\label{fig03}
         \includegraphics[scale=0.33]{figuras/base1.eps}
 	\caption{Base de dados do Pet}
 \end{figure}
