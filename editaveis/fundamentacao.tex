@@ -8,9 +8,9 @@ Um problema de aprendizado, pode ser colocado como um problema que reside em mel
 
 % Talvez mover esse bloco pra introdução
 Para viabilizar o aprendizado de máquina, é necessário primeiramente entender os dados que serão utilizados no processo de aprendizado. Para entender esses dados
-lançaremos mão de técnicas e conceitos estatísticos, que nos permitirão construir um modelo probabilístico que represente, por meio de uma função $f$, variáveis de entrada e de saída que compõe os dados com que estamos lidando. O fato de estarmos lidando com uma entrada e uma saída conhecida, nosso estudo irá se voltar para o \textit{aprendizado supervisionado}. Por outro lado, se no contexto do aprendizado, apenas dados de entrada estão disponíveis, é possível partir para o \textit{aprendizado não supervisionado}. 
+lançaremos mão de técnicas e conceitos estatísticos, que nos permitirão construir um modelo probabilístico que represente, por meio de uma função $f$, variáveis de entrada e de saída que compõe os dados com que estamos lidando. O fato de estarmos lidando com uma entrada e uma saída conhecida, nosso estudo irá se voltar para o \textit{aprendizado supervisionado}. Por outro lado, se no contexto do aprendizado, apenas dados de entrada estão disponíveis, é possível partir para o \textit{aprendizado não supervisionado}.
 
-Para o aprendizado supervionado, o conjunto de dados utilizado no treinamento será formado pelos dados em si, e pela saída esperada para esses dados\cite{Louridas}. Segundo \cite{James}, aprendizado estatístico supervisionado involve construir um modelo estatístico para prever ou estimar, uma saída a partir de uma ou mais entradas.
+Para o aprendizado supervionado, o conjunto de dados utilizado no treinamento será formado pelos dados em si, e pela saída esperada para esses dados\cite{Louridas}. Segundo \cite{James}, aprendizado estatístico supervisionado envolve construir um modelo estatístico para prever ou estimar, uma saída a partir de uma ou mais entradas.
 
 
 % Falar do alinhamento entre estatística e ciência da computação.
@@ -28,7 +28,7 @@ Neste capitulo iremos direcionar nossos estudos para o aprendizado supervisionad
 \section{Aprendizado Estatístico}
 
 Modelos probabilísticos, que representam uma distribuição probabilistica sobre variáveis randomicas, provê um conjuto de ferramentas sólidas e com princípios para
-que problemas de incerteza possam ser resolvidos\cite{Sun}. Modelos probabilísticos podem ser lineares e não lineares. 
+que problemas de incerteza possam ser resolvidos\cite{Sun}. Modelos probabilísticos podem ser lineares e não lineares.
 
 Modelos probabilisticos lineares descrevem uma variável dependente contínua, como uma função de uma ou mais variáveis independentes, possibilitando relacionar cada entrada à saída
 esperada. Podemos definir então, que a entrada do nosso modelo probabilístico será um conjunto de dados representados aqui pelo simbolo $X$, e a nossa saída sendo representada pelo simbolo $Y$.  $X$ pode ser chamada de diversas formas, como preditor, variáveis independentes, características ou simplesmente variáveis.
@@ -88,7 +88,7 @@ Quando o objetivo do aprendizado reside em deduzir ou estimar um valor de $Y$, d
 \]
 
 $f^*$ é a estimativa para $f$, $Y^*$ é o valor previsto para $Y$. A precisão de $Y^*$ como uma previsão de $Y$ depende de dois valores, chamados de \textit{erro reduzivel} e \textit{erro irreduzivel}. No geral, $f^*$ não será uma estimativa perfeita de $f$, e essa imperfeição irá naturalmente, adicionar erros no resultado\cite{Jordan}.
-O \textit{erro reduzivel} está relacionado ao erro de precisão de $f$. Ele é chamado de reduzível justamente pelo fato de que, por meio do treinamento, a precisão de $f^*$ pode ser cada vez melhor. Se uma amostra $n$ muito grande está disponível($n$ tende ao infinito) $f^*$ irá convergir para $f$\cite{Malhotra}. 
+O \textit{erro reduzivel} está relacionado ao erro de precisão de $f$. Ele é chamado de reduzível justamente pelo fato de que, por meio do treinamento, a precisão de $f^*$ pode ser cada vez melhor. Se uma amostra $n$ muito grande está disponível($n$ tende ao infinito) $f^*$ irá convergir para $f$\cite{Malhotra}.
 O erro \textit{erro irreduzivel} está relacionado ao erro $e$. Neste caso o erro independe de $X$, ou seja, não importa quão bom seja a nossa amostra de dados, muito menos o quão apropriada é a técnica de aprendizado estatístico utilizado, sempre haverá um erro $e$ que influência a precisão das previsões\cite{Jordan}.
 
 A teoria de aprendizado estatístico tem por objetivo dar as condições necessárias e suficientes no que tange aos modelos estatísticos, que irá
@@ -102,7 +102,6 @@ são comumente utilizadas para estimar $f$, quando se tem uma situação de pred
 
 Uma tarefa pode ser entendida como o processo de categorizar um dado, que será utilizado como entrada do algorítmo de aprendizado de máquina escolhido. Um bom exemplo dado por \cite{Jordan}, é a classificação de uma
 transação bancária como fraudulenta ou não. A tarefa reside exatamente na categorização. O quão precisa essa categorização é, depende da forma como o algorítmo escolhido para atender tal demanda é treinado. A maneira como esses dados são categorizados varia de acordo com o algorítmo selecionado para a classificação. Cada algorítmo espera que esses dados sejam modelados de uma forma ou de outra, assunto que será abordado ao longo deste capítulo.
-
 
 \subsubsection{regressão}
 
@@ -125,7 +124,7 @@ o quanto cada variável $X_p$, influência no salário final do indivíduo. Mode
 são comumente utilizadas para estimar $f$, quando se tem uma situação de predição \cite{Jordan}.
 
 \subsection{Estimativa da função de aprendizado}
-A estimativa da função $f^*$ a partir de $f$ ocorre utilizando uma amostra $S = \{(X_1, Y_1),...,(X_n, Y_n)\}$, 
+A estimativa da função $f^*$ a partir de $f$ ocorre utilizando uma amostra $S = \{(X_1, Y_1),...,(X_n, Y_n)\}$,
 chamada de amostra de treinamento\cite{Malhotra}, e dado o problema de aprendizado que queremos resolver, $f$ pode ser estimada utilizando uma abordagem linear, ou não linear.
 Entender como fraquezas de software, podem levar a vulnerabilidades de software, é uma problema típico de inferência, e nesse caso, modelos lineares podem ser uma boa escolha, uma vez que
 será relativamente fácil entender a relação entre $Y$ e $X_1,X_2,...X_p$\cite{Jordan}. Uma maneira de gerar um modelo linear, é através do método de \textit{regressão linear}.
@@ -133,10 +132,45 @@ Modelos lineares uitilizam \textit{métodos parametrizados} para estimar um mode
 
 % Falar sobre regressão linear
 
-
 \section{Análise Estática}
+Definir um modelo probabilístico é essencial para que possamos descrever, a partir de $f$, como fraquezas de software se relacionam com uma determinada
+vulnerabilidade, mas primeiramente precisamos conceituar o que são essas fraquezas e vulnerabilidades, e como ambas se interrelacionam.
 
-Dado o conhecimento sobre modelos estatísticos probabilisticos, se faz necessário conceitar o contexto em que iremos utilizar as abordagens
-já mencionadas. Segundo o \cite{mitre}, existem duas mil vulnerabilidades catalogadas, 
+Um \textit{vulnerabilidade} é uma propriedade de requisitos de sistemas de segurança, projeto, impĺementação, ou operação que poderia ser acidentalmente
+disparada, ou intencionalmente explorada resultando em uma falha de segurança\cite{Okun}. Ainda segundo \cite{Okun}, uma vulnerabilidade é o resultado de uma
+ou mais fraquezas nos requisitos, projeto, implementação ou operação. Um \textit{warning} é um problema, normalmente relacionado a uma fraqueza, identificado
+por uma ferramenta, e presente no relatório gerado pela ferramenta, ao ser executada em deteminado caso de teste\cite{Okun}.
 
-\subsection{CWE}
+
+Existe uma padronização para que fraquezas e vulnerabilidades possam ser catagoladas, e utilizadas em diferentes contextos. Essa padronização é feita por uma organização chamada $MITRE$. 
+$MITRE$ é uma organização sem fins lucrativos que trabalha para o interesse público.Seu papel é direcionar problemas críticos de importância nacional, combinando sistemas de engenharia e tecnologia da informação para desenvolver soluções que façam a diferença\cite{Mitre}. O $MITRE$ é responsável por manter a $CWE$, um dicionário de fraquezas comuns em software que podem ocorrer na
+arquitetura, projeto, código ou implementação, podendo levar a vulnerabilidades de segurança exploráveis. Dessa forma, estabelece uma linguagem comum para que essas fraquezas sejam catalogadas.
+O $CWE$ além de servir como uma grande base dados de fraquezas, também pode ser utilizado como um guia padrão para identificação,mitigação,e esforços de prevenção de fraquezas de software\cite{Mitre}.
+
+Uma fraqueza de software, no geral, é coletada a partir de uma ferramenta de análise estática. Análises quantitativas do código fonte podem ser feitas utilizando medições estáticas ou dinamicas. Medições estáticas são utilizadas durante uma análise estática\cite{Fenton}.
+Medição de software no geral pode ser categorizado de três formas\cite{Fenton}:
+\begin{itemize}
+\item \textbf{Medição de projeto}: Medição relacionada a atividades do projeto e marcos.
+\item \textbf{Medição de processo}: Medição relacionada ao ciclo de vida do projeto.
+\item \textbf{Medição de produto}: O código fonte gerado pelo projeto.
+\end{itemize}
+
+Podemos então inferir que fraquezas de software são coletadas a partir de medições de produto, por meio do uso de ferramentas de análise estática.
+Cada fraqueza coletada por determinada ferramenta, pode estar diretamente relacionada a uma vulnerabilidade de segurança, ou compor um conjunto de fraquezas que causam determinada vulnerabilidade.
+
+Além da $CWE$ existe um outro catálogo, chamado $CVE$. Este é responsável por, assim como a $CWE$, definir uma linguagem comum, mas para o registro
+de vulnerabilidades de segurança.
+
+\begin{figure}[h]
+	\centering
+	\label{fig02}
+        \includegraphics[scale=0.38]{figuras/vul1.eps}
+	\caption{Levantamento de vulnerabilidades}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\label{fig03}
+        \includegraphics[scale=0.38]{figuras/lg_consensus.eps}
+        \caption{Visão Geral da CWE - retirado da pagina da CWE}
+\end{figure}
