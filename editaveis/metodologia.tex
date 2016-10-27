@@ -19,7 +19,7 @@ Do ponto de vista dos procedimentos técnicos, esta pesquisa é bibliográfica e
 \section{Trabalhos relacionados}
 
 A área de aprendizado de máquina é bastante vasta, e aplicável a diferentes domínios.
-Durante o levantamento bibliográfico encontrou-se diversos sistemas de classificação que possuem certa similaridade com o que será proposto por essa pesquisa.
+Durante o levantamento bibliográfico encontrou-se diversos sistemas que fazem uso de aprendizado de máquina e que possuem certa similaridade com o que será proposto por essa pesquisa.
 Um primeiro trabalho relacionado que podemos citar, é a utilização de técnicas de aprendizado de máquina para classificar modulos e classes como passíveis, ou não, a falha\cite{Malhotra}.
 A construção de um modelo que represente esse tipo de contexto, leva em consideração métricas de código fonte e dados previos de falhas\cite{Malhotra}.
 
@@ -30,5 +30,20 @@ a partir da criação de um perfil, estabelecido utilizando os pacotes manualmen
 O processo de recomendação faz uso do algorítmo de bayes, e a fase de treinamento do algorítmo foi feita coletando dados de vários usuários da distribuição Debian.
 
 \section{Coleta de dados}
+Para que seja possível construir um modelo estatístico que represente, de maneira estimada, a relação entre fraquezas de software
+e as respectivas vulnerabilidades de segurança que se derivam destas fraquezas, se faz necessário coletar dados que possam ser utilizados como uma amostra de treinamento. Será a partir desta amostra que iremos estimar nossa função $f^*$, possibilitando a análise de inferência entre fraquezas de software, e suas vulnerabilidades.
+
+A amostra de treinamento será extraída a partir de dados coletados pelo projeto $Sate$. $Sate$ foi uma iniciativa da organização sem fins lucrativos $mitre$, e seu objeto foi coletar dados de fraquezas de diferentes ferramentas, criar uma saída única para esses dados, e realizar uma serie de análises em cima desses dados coletados. Uma das análises feitas por essse projeto, e em partes é o que motiva essa pesquisa, é a observação de que uma vulnerabilidade pode ser causada por uma ou mais fraquezas.
+
+% Gráfico de fraquezas x ano
+
+Definiu-se então, que a partir de uma ferramenta de análise estática chamada $Debile$, será construída uma base de dados contendo, fraquezas coletadas a partir de pacotes da distribuição Debian. Essa ferramenta fará parte de um projeto maior, que tem por objetivo construir uma vasta base de dados, que unifique a análise estática feita por ferramentas distintas,incluindo o $Debile$, e disponibilize para o $upstream$, informações de bugs e fraquezas de seu projeto.
+
+\subsection{Sate}
+
+\subsection{Debile}
+
+O Debile será
+
 
 \subsubsection{Ferramentas}
