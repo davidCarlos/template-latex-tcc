@@ -8,10 +8,10 @@ a fonte dos dados utilizados, os trabalhos relacionados, de onde buscamos o refe
 além da classificação da pesquisa em si.
 
 Esta pesquisa pode ser classificada, do ponto de vista de sua natureza, como aplicada, uma vez que a apartir dos conhecimentos bibliográficos,
-iremos propor uma ferramenta para classificação de pacotes debian. Do ponto de vista da forma de abordagem, podemos classificá-la como
-quantitativa, pois a avaliação dos pacotes será feita por técnicas estatísticas.
+iremos propor um modelo probabilistico para inferência de fraquezas de software, a partir de variáveis como a linguagem do projeto e o seu tamanho(medido por sloccount). Do ponto de vista da forma de abordagem, podemos classificá-la como
+quantitativa, pois a inferência realizada utilizando os pacotes debian será feita por técnicas estatísticas.
 
-Alinhada os objetivos do trabalho, esta pesquisa é exploratória, e se constroi a apartir dos estudos realizados na área de aprendizado
+Alinhada aos objetivos do trabalho, esta pesquisa é exploratória, e se constroi a apartir dos estudos realizados na área de aprendizado
 de máquina.
 
 Do ponto de vista dos procedimentos técnicos, esta pesquisa é bibliográfica e experimental.
@@ -30,20 +30,40 @@ a partir da criação de um perfil, estabelecido utilizando os pacotes manualmen
 O processo de recomendação faz uso do algorítmo de bayes, e a fase de treinamento do algorítmo foi feita coletando dados de vários usuários da distribuição Debian.
 
 \section{Coleta de dados}
-Para que seja possível construir um modelo estatístico que represente, de maneira estimada, a relação entre fraquezas de software
-e as respectivas vulnerabilidades de segurança que se derivam destas fraquezas, se faz necessário coletar dados que possam ser utilizados como uma amostra de treinamento. Será a partir desta amostra que iremos estimar nossa função $f^*$, possibilitando a análise de inferência entre fraquezas de software, e suas vulnerabilidades.
-
-A amostra de treinamento será extraída a partir de dados coletados pelo projeto $Sate$. $Sate$ foi uma iniciativa da organização sem fins lucrativos $mitre$, e seu objeto foi coletar dados de fraquezas de diferentes ferramentas, criar uma saída única para esses dados, e realizar uma serie de análises em cima desses dados coletados. Uma das análises feitas por essse projeto, e em partes é o que motiva essa pesquisa, é a observação de que uma vulnerabilidade pode ser causada por uma ou mais fraquezas.
-
-% Gráfico de fraquezas x ano
-
-Definiu-se então, que a partir de uma ferramenta de análise estática chamada $Debile$, será construída uma base de dados contendo, fraquezas coletadas a partir de pacotes da distribuição Debian. Essa ferramenta fará parte de um projeto maior, que tem por objetivo construir uma vasta base de dados, que unifique a análise estática feita por ferramentas distintas,incluindo o $Debile$, e disponibilize para o $upstream$, informações de bugs e fraquezas de seu projeto.
+Os dados que serão utilizados nessa pesquisa, serão em parte dados primários e em parte dados secundários. Os dados secundários serão utilizados na fase de treinamento do aprendizado de máquina, buscando encontrar o melhor modelo estatístico que traduza o domínio com que estamos lidando. Os dados primários serão coletados a partir da implantação de algumas ferramentas, que farão parte da construção dessa pesquisa.
 
 \subsection{Sate}
+Os dados secundários foram obtidos por meio do projeto $Sate$. Nesse projeto, várias ferramentas de análise estática foram executadas em diferentes projetos. O resultado obtido por essas ferramentas foi agrupado em uma linguagem única, e disponiblizado em formato $xml$ na internet. Essa padronização foi feita pelo fato de que cada ferramenta utilizada na fase de coleta, gerava uma saída diferente, dificultando a análise feita pelos pesquisadores. O projeto $Sate$ durou de 2008 até 2012, sendo que a cada ano de projeto, um conjunto de dados análisados e um relatório da pesquisa foram disponibilizados(O ano de 2011 não possui dados e também não possui relatório).
+
+\newpage
+\begin{figure}[h]
+	\centering
+	\label{sate_schema}
+        \includegraphics[scale=0.42]{figuras/sate_schema.eps}
+	\caption{O padrão xml que as ferramentas que participaram do projeto adotaram}
+\end{figure}
+
+A partir do uso do esquema definido na figura~\ref{sate_schema}, foi possível definir um processo de análise do relatório
+gerado pelas diferentes ferramentas escolhidas. Um exemplo de relatório padronizado da ferramenta $cppcheck$, utilizada no projeto.
+
+\begin{figure}[h]
+	\centering
+	\label{cppcheck}
+        \includegraphics[scale=0.42]{figuras/cppcheck.eps}
+	\caption{Exemplo de relatório da ferramenta cppcheck}
+\end{figure}
+\newpage
+
+A primeira etapa do projeto foi a submissão dos relatórios gerados pelas ferramentas, utilizando o esquema da figura~\ref{sate_schema}. A segunda etapa foi a análise dos relatórios por parte de pesquisadores do $Mitre$ em conjunto com os envolvidos no projeto $Sate$. Uma das abordagens utilizadas nessa análise envolvia relacionar os problemas relatados pelas ferramentas a $CWE's$ catalogadas. Essa abordagem permitiu chegar as seguintes caracteríticas de uma $CWE$:
+
+\begin{itemize}
+        \item Pode ser associada com mais de uma $CWE$ ($CWE$ composta).
+        \item Pode estar relacionada a mais de uma chamada no código fonte.
+        \item Pode possuir mais de um fluxo de dados.
+\end{itemize}
+
+Os dados coletados por $Sate$, nos permite afirmar que: \emph{Estima-se que, apenas entre 1/8 e 1/3  de todas as fraquezas coletadas são simples.}
 
 \subsection{Debile}
 
-O Debile será
-
-
-\subsubsection{Ferramentas}
+\subsection{Sloccount}
