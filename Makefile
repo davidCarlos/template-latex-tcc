@@ -18,7 +18,7 @@ EDITAVEIS_DIR = editaveis
 EDITAVEIS_SOURCES = informacoes.tex errata.tex dedicatoria.tex \
 					agradecimentos.tex epigrafe.tex resumo.tex abstract.tex \
 					abreviaturas.tex simbolos.tex introducao.tex \
-					aspectosgerais.tex consideracoes.tex textoepostexto.tex \
+					consideracoes.tex textoepostexto.tex \
 					elementosdotexto.tex elementosdopostexto.tex \
 					apendices.tex anexos.tex fundamentacao.tex metodologia.tex
 
@@ -40,8 +40,6 @@ all:
 $(TARGET): $(MAIN_FILE) $(SOURCES) bibliografia.bib
 	$(LATEX) $(MAIN_FILE) $(SOURCES)
 	$(BIBTEX) $(AUX_FILE)
-	$(LATEX) $(MAIN_FILE) $(SOURCES)
-	$(LATEX) $(MAIN_FILE) $(SOURCES)
 	$(DVIPS) $(DVI_FILE)
 	$(PS2PDF) $(PS_FILE)
 	@cp $(PDF_FILE) $(TARGET)
