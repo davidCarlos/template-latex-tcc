@@ -3,48 +3,78 @@
 
 \section{Classificação da Pesquisa}
 
-Neste capitulo iremos definir a metodologia estabelecida para essa pesquisa, bem como
-a fonte dos dados utilizados, os trabalhos relacionados, de onde buscamos o referêncial teórico,
+Neste capitulo iremos definir a metodologia estabelecida\ 
+para essa pesquisa, bem como a fonte dos dados utilizados,\ 
+os trabalhos relacionados, de onde buscamos o referêncial teórico,\
 além da classificação da pesquisa em si.
 
-Esta pesquisa pode ser classificada, do ponto de vista de sua natureza, como aplicada, uma vez que a apartir dos conhecimentos bibliográficos,
-iremos propor um modelo probabilistico para inferência de fraquezas de software, a partir de variáveis como a linguagem do projeto e o seu tamanho(medido por sloccount). Do ponto de vista da forma de abordagem, podemos classificá-la como
-quantitativa, pois a inferência realizada utilizando os pacotes debian será feita por técnicas estatísticas.
+Esta pesquisa pode ser classificada, do ponto de vista de sua natureza,\ 
+como aplicada, uma vez que a apartir dos conhecimentos bibliográficos,\
+iremos propor um modelo probabilistico para inferência de fraquezas\
+de software, a partir de variáveis como a linguagem do projeto e o \
+seu tamanho(medido por sloccount). Do ponto de vista da forma de abordagem,\
+podemos classificá-la como quantitativa, pois a inferência realizada\ 
+utilizando os pacotes debian será feita por técnicas estatísticas.
 
-Alinhada aos objetivos do trabalho, esta pesquisa é exploratória, e se constroi a apartir dos estudos realizados na área de aprendizado
-de máquina.
+Alinhada aos objetivos do trabalho, esta pesquisa é exploratória, \ 
+e se constroi a apartir dos estudos realizados na área de \ 
+aprendizado de máquina.
 
-Do ponto de vista dos procedimentos técnicos, esta pesquisa é bibliográfica e experimental.
+Do ponto de vista dos procedimentos técnicos, \ 
+esta pesquisa é bibliográfica e experimental.
 
 \section{Trabalhos relacionados}
 
-A área de aprendizado de máquina é bastante vasta, e aplicável a diferentes domínios.
-Durante o levantamento bibliográfico encontrou-se diversos sistemas que fazem uso de aprendizado de máquina e que possuem certa similaridade com o que será proposto por essa pesquisa.
-Um primeiro trabalho relacionado que podemos citar, é a utilização de técnicas de aprendizado de máquina para classificar modulos e classes como passíveis, ou não, a falha\cite{Malhotra}.
-A construção de um modelo que represente esse tipo de contexto, leva em consideração métricas de código fonte e dados previos de falhas\cite{Malhotra}.
-
-A área de saúde também pode se beneficiar de sistemas de recomendação. Uma pesquisa feita pela Universidade da Macedônia,  com pacientes portadores de Parkinson e pessoas sem a doença, permitiu, a partir da construção de um modelo estatístico e um classificador Bayesiano, diagnosticar com uma precisão de 91\%, parcientes com Parkinson\cite{Kotsavasiloglou}. O modelo estatístico definido pela Universidade levou em consideração métricas extraidas a partir do uso de tablets pelos voluntários. Era solicitado que se desenhasse, em um tablet, 11 linhas horizontais da esquerda para a direita, e outras 10 linhas horizontais da direita para esquerda. A partir dessa atividade os pesquisadores extrairam as métricas utilizadas no modelo, uma vez que os voluntários, foram divididos em três grupos distintos, sendo um deles de pacientes com a doença. Vale ressaltar que o estudo foi motivado principalmente pela subjetividade em diagnosticar uma doença como Parkinson, propondo assim um metodo que agregue a futuros diagnósticos.
+A área de aprendizado de máquina é bastante vasta, e aplicável a \ 
+diferentes domínios.
+Durante o levantamento bibliográfico encontrou-se diversos \ 
+sistemas que fazem uso de aprendizado de máquina e que possuem certa similaridade com o que será proposto por essa pesquisa.\
+Um primeiro trabalho relacionado que podemos citar, é a utilização de \ 
+técnicas de aprendizado de máquina para classificar modulos e classes \ 
+como passíveis, ou não, a falha\cite{Malhotra}.
+A construção de um modelo que represente esse tipo de contexto, \ 
+leva em consideração métricas de código fonte e dados previos de falhas\cite{Malhotra}.
 
 Para o domínio de pacotes debian aliado ao uso de um modelo grafico probabilístico que tenha como fonte de dados estes pacotes, podemos citar a Aplicação \textit{AppRecommender}. Essa aplicação recomenda pacotes Debian para o usuário,
 a partir da criação de um perfil, estabelecido utilizando os pacotes manualmente instalados na máquina.
 O processo de recomendação faz uso do algorítmo de bayes, e a fase de treinamento do algorítmo foi feita coletando dados de vários usuários da distribuição Debian.
 
+%TODO: Dar exemplo de projetos que utilizam inferência
+
 \section{Coleta de dados}
-Os dados que serão utilizados nessa pesquisa, serão em parte dados primários e em parte dados secundários. Os dados secundários serão utilizados na fase de treinamento do aprendizado de máquina, buscando encontrar o melhor modelo estatístico que traduza o domínio com que estamos lidando. Os dados primários serão coletados a partir da implantação de algumas ferramentas, que farão parte da construção dessa pesquisa.
+Os dados que serão utilizados nessa pesquisa, serão em \ 
+parte dados primários e em parte dados secundários. Os dados secundários \ 
+serão utilizados na fase de treinamento do aprendizado de máquina, \ 
+buscando encontrar o melhor modelo estatístico que traduza o \ 
+domínio com que estamos lidando. Os dados primários serão \ 
+coletados a partir da implantação de algumas ferramentas, que \ 
+farão parte da construção dessa pesquisa.
 
 \subsection{Sate}
-Os dados secundários foram obtidos por meio do projeto $Sate$. Nesse projeto, várias ferramentas de análise estática foram executadas em diferentes projetos. O resultado obtido por essas ferramentas foi agrupado em uma linguagem única, e disponiblizado em formato $xml$ na internet. Essa padronização foi feita pelo fato de que cada ferramenta utilizada na fase de coleta, gerava uma saída diferente, dificultando a análise feita pelos pesquisadores. O projeto $Sate$ durou de 2008 até 2012, sendo que a cada ano de projeto, um conjunto de dados análisados e um relatório da pesquisa foram disponibilizados(O ano de 2011 não possui dados e também não possui relatório).
+Os dados secundários foram obtidos por meio do projeto $Sate$. \ 
+Nesse projeto, várias ferramentas de análise estática foram executadas \ 
+em diferentes projetos. O resultado obtido por essas ferramentas foi \ 
+agrupado em uma linguagem única, e disponiblizado em \ 
+formato $xml$ na internet. Essa padronização foi feita pelo fato \ 
+de que cada ferramenta utilizada na fase de coleta, gerava uma \ 
+saída diferente, dificultando a análise feita pelos pesquisadores. \ 
+O projeto $Sate$ durou de 2008 até 2012, sendo que a cada ano de projeto, \ 
+um conjunto de dados análisados e um relatório da pesquisa foram \ 
+disponibilizados(O ano de 2011 não possui dados e também não possui relatório).
 
 \newpage
 \begin{figure}[h]
 	\centering
 	\label{sate_schema}
         \includegraphics[scale=0.42]{figuras/sate_schema.eps}
-	\caption{O padrão xml que as ferramentas que participaram do projeto adotaram}
+	\caption{O padrão xml que as ferramentas que \
+        participaram do projeto adotaram}
 \end{figure}
 
-A partir do uso do esquema definido na figura~\ref{sate_schema}, foi possível definir um processo de análise do relatório
-gerado pelas diferentes ferramentas escolhidas. Um exemplo de relatório padronizado da ferramenta $cppcheck$, utilizada no projeto.
+A partir do uso do esquema definido na figura~\ref{sate_schema}, \ 
+foi possível definir um processo de análise do relatório \
+gerado pelas diferentes ferramentas escolhidas. Um exemplo de \ 
+relatório padronizado da ferramenta $cppcheck$, utilizada no projeto.
 
 \begin{figure}[h]
 	\centering
@@ -54,7 +84,13 @@ gerado pelas diferentes ferramentas escolhidas. Um exemplo de relatório padroni
 \end{figure}
 \newpage
 
-A primeira etapa do projeto foi a submissão dos relatórios gerados pelas ferramentas, utilizando o esquema da figura~\ref{sate_schema}. A segunda etapa foi a análise dos relatórios por parte de pesquisadores do $Mitre$ em conjunto com os envolvidos no projeto $Sate$. Uma das abordagens utilizadas nessa análise envolvia relacionar os problemas relatados pelas ferramentas a $CWE's$ catalogadas. Essa abordagem permitiu chegar as seguintes caracteríticas de uma $CWE$:
+A primeira etapa do projeto foi a submissão dos relatórios gerados \ 
+pelas ferramentas, utilizando o esquema da figura~\ref{sate_schema}. \ 
+A segunda etapa foi a análise dos relatórios por parte de \ 
+pesquisadores do $Mitre$ em conjunto com os envolvidos no projeto $Sate$. \ 
+Uma das abordagens utilizadas nessa análise envolvia relacionar os \ 
+problemas relatados pelas ferramentas a $CWE's$ catalogadas. \ 
+Essa abordagem permitiu chegar as seguintes caracteríticas de uma $CWE$:
 
 \begin{itemize}
         \item Pode ser associada com mais de uma $CWE$ ($CWE$ composta).
@@ -62,7 +98,9 @@ A primeira etapa do projeto foi a submissão dos relatórios gerados pelas ferra
         \item Pode possuir mais de um fluxo de dados.
 \end{itemize}
 
-Os dados coletados por $Sate$, nos permite afirmar que: \emph{Estima-se que, apenas entre 1/8 e 1/3  de todas as fraquezas coletadas são simples.}
+Os dados coletados por $Sate$, nos permite afirmar \ 
+que: \emph{Estima-se que, apenas entre 1/8 e 1/3  de todas as \ 
+fraquezas coletadas são simples.}
 
 \subsection{Debile}
 
@@ -71,5 +109,8 @@ Os dados coletados por $Sate$, nos permite afirmar que: \emph{Estima-se que, ape
 
 \section{Modelo estatístico}
 
-A definição do modelo estatístico deve permitir que as variáveis independentes $X$, tenham impacto direto em
-como as fraquezas de software, representadas por $Y$ são coletadas.
+A definição do modelo estatístico deve permitir que as variáveis \ 
+independentes $X$, tenham impacto direto em como as fraquezas de software, \ 
+representadas por $Y$ são coletadas. O método de inferência, assim \ 
+como a regressão, faz parte da classe de modelos estatísticos que \ 
+utilizam métodos parametrizados diferentemente do classificação, 
