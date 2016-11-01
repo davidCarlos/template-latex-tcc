@@ -28,16 +28,22 @@ esta pesquisa é bibliográfica e experimental.
 A área de aprendizado de máquina é bastante vasta, e aplicável a \ 
 diferentes domínios.
 Durante o levantamento bibliográfico encontrou-se diversos \ 
-sistemas que fazem uso de aprendizado de máquina e que possuem certa similaridade com o que será proposto por essa pesquisa.\
+sistemas que fazem uso de aprendizado de máquina e que possuem certa \ 
+similaridade com o que será proposto por essa pesquisa.\
 Um primeiro trabalho relacionado que podemos citar, é a utilização de \ 
 técnicas de aprendizado de máquina para classificar modulos e classes \ 
 como passíveis, ou não, a falha\cite{Malhotra}.
-A construção de um modelo que represente esse tipo de contexto, \ 
-leva em consideração métricas de código fonte e dados previos de falhas\cite{Malhotra}.
+A construção de um modelo que represente esse tipo de contexto, \ leva em \ 
+consideração métricas de código fonte e dados previos de falhas\cite{Malhotra}.
 
-Para o domínio de pacotes debian aliado ao uso de um modelo grafico probabilístico que tenha como fonte de dados estes pacotes, podemos citar a Aplicação \textit{AppRecommender}. Essa aplicação recomenda pacotes Debian para o usuário,
-a partir da criação de um perfil, estabelecido utilizando os pacotes manualmente instalados na máquina.
-O processo de recomendação faz uso do algorítmo de bayes, e a fase de treinamento do algorítmo foi feita coletando dados de vários usuários da distribuição Debian.
+Para o domínio de pacotes debian aliado ao uso de um modelo grafico \ 
+probabilístico que tenha como fonte de dados estes pacotes, \ 
+podemos citar a Aplicação \textit{AppRecommender}. Essa aplicação recomenda \ 
+pacotes Debian para o usuário, a partir da criação de um perfil, \ 
+estabelecido utilizando os pacotes manualmente instalados na máquina.
+O processo de recomendação faz uso do algorítmo de bayes, e a fase de \ 
+treinamento do algorítmo foi feita coletando dados de vários \ 
+usuários da distribuição Debian.
 
 %TODO: Dar exemplo de projetos que utilizam inferência
 
@@ -107,10 +113,31 @@ fraquezas coletadas são simples.}
 \subsection{Sloccount}
 
 
-\section{Modelo estatístico}
+\section{Modelo probabilistico}
+ Esta pesquisa tem por objetivo geral \
+investigar de que maneira características intrinsicas de um projeto \
+podem impactar na maneira como ferramentas de análise estática como o \ 
+$Debile$ coletam fraquezas de software. Dessa maneira, podemos representar \
+a visão geral deste problema de aprendizado da seguinte forma
 
-A definição do modelo estatístico deve permitir que as variáveis \ 
-independentes $X$, tenham impacto direto em como as fraquezas de software, \ 
-representadas por $Y$ são coletadas. O método de inferência, assim \ 
-como a regressão, faz parte da classe de modelos estatísticos que \ 
-utilizam métodos parametrizados diferentemente do classificação, 
+\begin{figure}[h]
+	\centering
+	\label{visao_geral}
+        \includegraphics[scale=0.40]{figuras/visao_geral.eps}
+	\caption{Abordagens para aprendizado de máquina}
+\end{figure}
+
+As fraquezas de software serão nossa variável $Y$, de maneira que iremos \
+coletá-las utilizando as ferramentas $Sate$ e $Debile$. É preciso entender,
+que um problema de aprendizado é dividido basicamente em duas etapas: treinamento e\ 
+aplicação do modelo em dados novos, assim como é mostrado na \ 
+figura~\ref{fluxo_treinamento}.  A figura ~\ref{visao_geral} demonstra \
+quais serão as variáveis independentes do nosso modelo probabilistico: \
+\[
+X = \{tamanho\ do\ projeto, linguagem\ de\ programação, número\ de\ contribuidores\}
+\]
+$Y$ será o número de fraquezas encontradas pelas ferramentas que iremos \ 
+utilizar tanto na fase de treinamento, quanto na fase de aplicação.  Para \ 
+construirmos nosso modelo estatístico, utilizaremos a técnica \ 
+de $regressão\ linear$, a partir do método de $mínimos\ quadrados$.
+

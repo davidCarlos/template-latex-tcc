@@ -12,7 +12,14 @@ computacionais que tem produzido \cite{Jordan}.
 
 Um problema de aprendizado, pode ser colocado como um problema que reside em \
 melhorar uma medida de performance, quando se executa alguma tarefa, \
-através de algum tipo de experiência de treinamento \cite{Jordan}.
+através de algum tipo de experiência de treinamento \cite{Jordan}. Isso nos permite definir um fluxo de etapas para se resolver um problema de aprendizado.
+
+\begin{figure}[h]
+	\centering
+	\label{fluxo_treinamento}
+        \includegraphics[scale=0.40]{figuras/fluxo_treinamento.eps}
+	\caption{Fluxo para solução de um problema de aprendizado}
+\end{figure}
 
 % Talvez mover esse bloco pra introdução
 Para viabilizar o aprendizado de máquina, é necessário primeiramente \
@@ -242,6 +249,15 @@ encontrar os coeficientes da função $f^*$
 \[
         f(X) = b_0 + b_1X_1 + b_2X_2 ... + b_nX_n
 \]
+
+É na fase de treinamento de $f^*$ que estimamos os coeficientes \ 
+$b_0,b_1...b_2$, caso o modelo probabilístico adotado para $f^*$ seja linear.
+Modelos lineares são $parametrizados$, pelo fato de que os coeficientes de \
+$f^*$ devem ser todos estimados na fase de treinamento. Modelos não lineares
+são mais flexiveis, pelo fato da não necessidade de se estimar todos os 
+coeficientes de $f^*$.Para se estimar os coeficientes o método mais \ 
+comum é o de \textit{mínimos quadrados}\cite{James}.
+
 
 % Falar sobre regressão linear
 
